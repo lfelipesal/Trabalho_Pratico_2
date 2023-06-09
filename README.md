@@ -1,83 +1,61 @@
-## Readme template da Alura
 
-Template para personalizar readme dos projetos da [Alura](https://www.alura.com.br/). O objetivo deste template é auxiliar as pessoas que pretendem criar readmes mais informativos e descritivos. Considere esse modelo como base, mas se preferir, ajuste os detalhes conforme sua necessidade e caso queira, [confira esse artigo que ensina a personalizar readmes em geral](https://www.alura.com.br/artigos/escrever-bom-readme).
+# Trabalho de Implementação - Algoritmos de Ordenação
 
-## Exemplos de readmes
+Este trabalho consiste na implementação de um sistema que utiliza diferentes algoritmos de ordenação em conjunto com o algoritmo de scan de Graham. O programa recebe como entrada um arquivo contendo uma sequência de pontos no plano cartesiano, onde cada ponto é representado por um par de coordenadas inteiras. O objetivo é aplicar os algoritmos de ordenação implementados (MergeSort, Insertion Sort e um algoritmo de ordenação linear) e integrá-los com o algoritmo de scan de Graham.
 
-<details>
-  <summary><b>Mobile</b></summary>
-    
-- [Android](https://github.com/alura-cursos/android-com-kotlin-personalizando-ui/blob/master/README.md)
-- [React Native](https://github.com/alura-cursos/react-native-comecando-do-zero/blob/main/README.md)
-- [Flutter](https://github.com/alura-cursos/flutter-nuvigator/blob/start/README.md)
-</details>
-
-<details>
-  <summary><b>Front-end</b></summary>
-    
-- [JavaScript](https://github.com/vanessametonini/aluramidi-curso/blob/master/README.md) 
-</details>
-
-<details>
-  <summary><b>Programação</b></summary>
+O algoritmo de scan de Graham é utilizado para encontrar o fecho convexo de um conjunto de pontos no plano cartesiano. O fecho convexo é o menor polígono convexo que contém todos os pontos do conjunto. O algoritmo de scan de Graham utiliza uma estratégia baseada em ângulos para realizar a ordenação dos pontos e determinar o fecho convexo.
   
-- [Kotlin](https://github.com/alura-cursos/kotlin-introducao-orientacao-a-objetos/blob/main/README.md)
-- [Java](https://github.com/gui-lirasilva/Edige-POO/blob/master/README.md)
+## 🔨 Funcionalidades
+O programa deve ser capaz de executar as seguintes configurações:
+
+Graham + Insertion Sort: Utilizar o algoritmo de ordenação Insertion Sort para ordenar os pontos antes de aplicar o algoritmo de scan de Graham.
+
+Graham + Ordenação Linear (Counting, Bucket ou Radix): Utilizar um algoritmo de ordenação linear (Counting Sort, Bucket Sort ou Radix Sort) para ordenar os pontos antes de aplicar o algoritmo de scan de Graham.
+
+Jarvis: Utilizar o algoritmo de marcha de Jarvis (também conhecido como algoritmo do embrulho convexo) para encontrar o fecho convexo dos pontos, sem a necessidade de um algoritmo de ordenação prévia.
+
+O programa deve ler o arquivo de entrada, passado como argumento na linha de comando, e executar todas as quatro configurações possíveis, produzindo a saída correspondente para cada uma delas.
+  - `Graham + MergeSort`:  Utilizar o algoritmo de ordenação Insertion Sort para ordenar os pontos antes de aplicar o algoritmo de scan de Graham.
   
-</details>
-
-Ao criar o seu readme, remova todas as informações acima e mantenha apenas a imagem de capa e o conteúdo restante a partir do título **"Nome do projeto"**.
-
-## Imagem de capa
-
-Adicione a imagem de capa com o tema do seu projeto:
-
-![Thumbnail GitHub](https://user-images.githubusercontent.com/8989346/123303345-171fc980-d4f4-11eb-84ae-cb0e49bfb126.png)
-
-> Você pode pegar a imagem a partir [deste template](https://docs.google.com/presentation/d/1im_-_spDdNEEsfrmjeZet2ZzVKjG-sQSBWfPFJhZ4q0/edit#slide=id.gb6f422ab58_0_111).
-
-> Ou gerar neste [site](https://alura-github-thumbnail-generator.vercel.app/).
-
-Após adicionar a imagem, também modifique as configurações do projeto para garantir que a imagem vai ser carregada como thumbnail:
-
-**Settings** > **Options** > **Social preview** > **Edit** > **Upload an image...**
-
-<details>
-  <summary><b>Demonstração da adição de thumbnail<b/></summary>
-    
-![adicionando-imagem-preview](https://user-images.githubusercontent.com/8989346/123303159-e0e24a00-d4f3-11eb-9900-92a8b15bc31b.gif)
-    
-</details>
+  - `Tiro básico`:  O jogador deve ter acesso a uma tecla que dispara o tiro do canhão do tanque. O tiro não deve 
+mudar de direção depois que ele foi lançado e só deve para depois que ele sair da tela ou colidir: 1) com o tanque inimigo 
+ou 2) com um obstáculo do cenário. Além disso, um canhão só pode disparar 1 tiro por vez. A tecla utilizada para o tiro foi o espaço.
   
-# Nome do projeto
+  - `Tiro avançado`:  Ao segurar o botão de tiro, o tiro deve aumentar de tamanho e, quando disparado no
+seu tamanho máximo, deve ser capaz de eliminar todos os inimigos que estejam em sua rota.
+  
+  - `Bloco`:  O cenário deve conter pelo menos um bloco que elimina o jogador e inimigos que colidem com
+ele. Além disso, blocos devem ter tamanhos e posições variáveis, mas devem ocupar, no mínimo, um
+quinto da altura da tela e devem ter comprimento pelo menos equivalente à largura da tela. Enquanto
+inimigos podem ser destruídos, blocos não podem.
+  
+  - `Controle de coliões`:  Os objetos presentes no cenário não podem se sobrepor. Tiros não podem
+atravessar obstáculos e nem inimigos. Da mesma forma, os movimentos dos inimigos e da nave do
+jogador devem ser limitados aos espaços vazios do cenário, ou seja, não podem sair da tela e não
+podem atravessar blocos.
+ 
+  - `Pontuação`: Cada inimigo destruído deve aumentar a pontuação do jogador. Inimigos devem oferecer
+valores em pontuação diferentes, de acordo com algum critério (ex: tamanho). O cenário deve exibir
+os pontos ganhos pelos jogadores.
+  
+  - `Fim de jogo`:  O jogo deve terminar quando o jogador colidir com um inimigo ou com um bloco.
+  
+  - `Recorde`:  A maior pontuação registrada (recorde) deve ser armazenada em um arquivo. O valor do
+recorde deve ser exibido sempre que o personagem terminar o jogo de forma vitoriosa. Se além disso
+ele também bater o recorde, uma mensagem informativa deve ser apresentada para ele. 
 
-Descreva o que é o projeto e o que ele faz
-
-## 🔨 Funcionalidades do projeto
-
-Indique quais são as funcionalidades e comportamentos do App
-
-Se possível, apresente um exemplo visual do projeto, seja gif, imagens ou vídeo, abaixo segue um exemplo:
-
-![](https://github.com/alura-cursos/android-com-kotlin-personalizando-ui/raw/master/img/amostra.gif)
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
-**Faça uma lista de tecnologias e técnicas utilizadas (a justificativa e descrição são opcionais)**:
-
-- `Funcionalidade 1`: descrição da funcionalidade 1
-- `Funcionalidade 2`: descrição da funcionalidade 2
-  - `Funcionalidade 2a`: descrição da funcionalidade 2a relacionada à funcionalidade 2
-- `Funcionalidade 3`: descrição da funcionalidade 3
+- `Linguagem C`
+- `Biblioteca Allegro5`
+- `Windows - MinGW`
 
 ## 📁 Acesso ao projeto
 
-**Indique como é possível baixar ou acessar o código fonte do projeto, seja projeto inicial ou final**
+Você pode acessar o codigo fonte que foi desenvolvido para jogo [aqui](https://github.com/lfelipesal/R-type/blob/main/tp.c).
 
 ## 🛠️ Abrir e rodar o projeto
 
-**Apresente as instruções necessárias para abrir e executar o projeto**
-
-## 📚 Mais informações do curso
-
-**Faça um CTA (_call to action_) para o curso do projeto**
+Para jogar o que foi desenvolvido basta clonar esse repositório na maquina local no ambiente Windows, entrar na pasta pelo prompt de comando(cmd),
+e dentro da pasta digitar o comando make.
